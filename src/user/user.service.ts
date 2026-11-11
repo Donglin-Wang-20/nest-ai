@@ -37,6 +37,12 @@ export class UserService {
     return user;
   }
 
+  update(id: number, dto: CreateUserDto): User {
+    const user = this.findOne(id);
+    Object.assign(user, dto);
+    return user;
+  }
+
   remove(id: number): void {
     const index = this.users.findIndex((item) => item.id === id);
     if (index === -1) {
