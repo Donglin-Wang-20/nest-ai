@@ -8,5 +8,7 @@ export default defineConfig({
     globals: true,
     root: './',
     include: ['**/*.spec.ts'],
+    // 每个测试文件执行前先跑一遍，用来加载 .env
+    setupFiles: ['./test/setup.ts'],
   },
 });
